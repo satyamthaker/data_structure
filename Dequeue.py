@@ -1,7 +1,7 @@
-class Deque:
+class ArrayQueue:
     DEFAULT_CAPACITY = 10
     def __init__(self):
-        self.item = [] * Deque.DEFAULT_CAPACITY
+        self.item = [] * ArrayQueue.DEFAULT_CAPACITY
 
     def isEmpty(self):
         return self.item == []
@@ -21,7 +21,7 @@ class Deque:
     def size(self):
         return len(self.item)
 
-dq=Deque()
+dq=ArrayQueue()
 print(dq.isEmpty())
 dq.enqueueBack(9)
 dq.enqueueBack('satyam')
