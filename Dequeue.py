@@ -1,34 +1,30 @@
 class ArrayQueue:
     DEFAULT_CAPACITY = 10
     def __init__(self):
-        self.item = [] * ArrayQueue.DEFAULT_CAPACITY
+        self.data = [None] * ArrayQueue.DEFAULT_CAPACITY
 
     def isEmpty(self):
-        return self.item == []
+        return self.size == 0
 
-    def enqueueFront(self, item):
-        self.item.append(item)
+    def enqueueFront(self, data):
+        self.data.append(data)
 
-    def enqueueBack(self, item):
-        self.item.insert(0,item)
+    def enqueueBack(self, data):
+        self.data.insert(0,data)
 
     def dequeueFront(self):
-        return self.item.pop()
+        return self.data.pop()
 
     def dequeueBack(self):
-        return self.item.pop(0)
+        return self.data.pop(0)
 
     def size(self):
-        return len(self.item)
+        return len(self.data)
 
 dq=ArrayQueue()
-print(dq.isEmpty())
-dq.enqueueBack(9)
-dq.enqueueBack('satyam')
-dq.enqueueFront('thaker')
-dq.enqueueFront(True)
-print(dq.size())
-print(dq.isEmpty())
-dq.enqueueBack(9.9)
+dq.enqueueBack('thaker')
+dq.enqueueFront('satyam')
 print(dq.dequeueBack())
 print(dq.dequeueFront())
+print(dq.size())
+print(dq.isEmpty())
